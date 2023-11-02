@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user
+      author: Shylau
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: age
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: residence_id
+                  type: bigint

@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-apartment
+      author: Shylau
+      changes:
+        - createTable:
+            tableName: apartment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: owner_fk
+                    deleteCascade: true
